@@ -1,0 +1,9 @@
+{
+  "id": "workflow-placeholder",
+  "title": "Workflow Placeholder",
+  "description": "Neutral template retained so the repository keeps the expected scenario/workflow structure without private business content.",
+  "notes": [
+    "Replace with private workflow definitions in your non-public environment.",
+    "Keep IDs, trace contracts, and evidence contracts aligned with service expectations."
+  ]
+}

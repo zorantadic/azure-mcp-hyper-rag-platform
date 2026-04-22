@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  web-ui:
+    container_name: hyperrag-web-ui
+    build:
+      context: ./apps/web-ui
+    ports:
+      - "${WEB_UI_PORT:-3000}:3000"
+    env_file:
+      - .env
+    depends_on:
+      - orchestrator
+      - artifact-api
+
+  orchestrator:
+    container_name: hyperrag-orchestrator
+    build:
+      context: ./apps/orchestrator
+    ports:
+      - "${ORCHESTRATOR_PORT:-4000}:4000"
+    env_file:
+      - .env
+    depends_on:
+      - retrieval-api
+      - artifact-api
+
+  retrieval-api:
+    container_name: hyperrag-retrieval-api
+    build:
+      context: ./apps/retrieval-api
+    ports:
+      - "${RETRIEVAL_API_PORT:-4100}:4100"
+    env_file:
+      - .env
+
+  artifact-api:
+    container_name: hyperrag-artifact-api
+    build:
+      context: ./apps/artifact-api
+    ports:
+      - "${ARTIFACT_API_PORT:-4200}:4200"
+    env_file:
+      - .env
+
+  indexing-pipeline:
+    container_name: hyperrag-indexing-pipeline
+    build:
+      context: ./apps/indexing-pipeline
+    ports:
+      - "${INDEXING_PIPELINE_PORT:-4300}:4300"
+    env_file:
+      - .env
