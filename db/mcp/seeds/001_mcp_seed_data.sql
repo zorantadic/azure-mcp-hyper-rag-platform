@@ -1,0 +1,3 @@
+-- Repository-safe placeholder seed file.
+-- Intentionally left without business sample rows.
+-- Add environment-specific MCP seed data only in your private workspace.

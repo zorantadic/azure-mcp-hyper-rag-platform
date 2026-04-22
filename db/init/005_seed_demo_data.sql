@@ -1,0 +1,2 @@
+-- No public seed data is included in the public-shareable package.
+-- Add environment-specific seed statements only in your private workspace.
